@@ -2,6 +2,14 @@
 
 This project is one of the simplest ways how to implement login system using Web Service Rest API.
 
+### iOS Preview
+![screen shot 2017-02-20 at 4 01 44 am](https://cloud.githubusercontent.com/assets/10904957/23106000/0b00f0ac-f722-11e6-8510-0107e68a6b0a.png)
+
+![screen shot 2017-02-20 at 4 02 01 am](https://cloud.githubusercontent.com/assets/10904957/23106001/0b2932ec-f722-11e6-85fe-46b04c75ce6b.png)
+
+### Android Preview soon...
+### UWP Preview soon...
+
 Before we begin, we need to prepare our Web Service.
 
 I created an optional prerequisite in creating your basic web service api using ASP.NET Web API.
