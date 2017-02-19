@@ -153,11 +153,13 @@ public class RestClient<T>
 
 ![capture33](https://cloud.githubusercontent.com/assets/10904957/23105221/3db31176-f716-11e6-999c-0733d2681059.PNG)
 
-6.2 Inside the LoginService paste this following code snippet. 
+6.2 Inside the LoginService class, paste this following code snippet. 
 
 ``` C#
+// fetch the RestClient<T>
 RestClient<UserDetailCredentials> _restClient = new RestClient<UserDetailCredentials>();
 
+// Boolean function with the following parameters of username & password.
 public async Task<bool> CheckLoginIfExists(string username, string password)
 {
    var check = await _restClient.checkLogin(username, password);
@@ -165,3 +167,30 @@ public async Task<bool> CheckLoginIfExists(string username, string password)
    return check;
 }
 ```
+### 7.0 Creating our Xaml View Page
+
+7.1 Right click the Views Folder -> Add -> New Item... -> Visual C# -> Cross-Platform and choose Forms Xaml Page. In this example, we name our xaml page as "LoginPage.xaml" and click "Add"
+
+![capture33](https://cloud.githubusercontent.com/assets/10904957/23105221/3db31176-f716-11e6-999c-0733d2681059.PNG)
+
+7.2 Modify the xaml page. Here I created a basic sample design of the login.
+
+```` xaml
+<StackLayout Padding="30"
+             VerticalOptions="Start">
+   <Label Text="Username"
+          HorizontalOptions="Center"/>
+   <Entry Text=""
+          x:Name="EntryUsername"/>
+   <Label Text="Password"
+          HorizontalOptions="Center"/>
+   <Entry Text=""
+          x:Name="EntryPassword"/>
+   <Button Text="Login"
+           TextColor="White"
+           BackgroundColor="#22A7F0"
+           x:Name="ButtonLogin"/>
+</StackLayout>
+```
+
+![capture35](https://cloud.githubusercontent.com/assets/10904957/23105568/3ef023b6-f71c-11e6-8927-7a4f35c9a814.PNG)
