@@ -234,7 +234,7 @@ private async void ButtonLogin_Clicked(object sender, EventArgs e)
 private async void ButtonLogin_Clicked(object sender, EventArgs e)
 {
    LoginService services = new LoginService();
-   var getLoginDetails = await services.CheckLoginIfExists(XNameUsername.Text, XNamePassword.Text);
+   var getLoginDetails = await services.CheckLoginIfExists(EntryUsername.Text, EntryPassword.Text);
 
    if (getLoginDetails)
    {
@@ -246,3 +246,4 @@ private async void ButtonLogin_Clicked(object sender, EventArgs e)
    }
 }
 ```
+Thank you for reading. I hope you've learned from me.
