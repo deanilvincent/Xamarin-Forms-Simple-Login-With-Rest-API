@@ -246,4 +246,16 @@ private async void ButtonLogin_Clicked(object sender, EventArgs e)
    }
 }
 ```
+### 9.0 Running the app
+
+9.1 Lastly, change your App.cs and target the MainPage as equal to our login page
+
+```` xmal
+public App()
+{
+   MainPage = new LoginPage();
+}
+```
+9.2 Run the app
+
 Thank you for reading. I hope you've learned from me.
