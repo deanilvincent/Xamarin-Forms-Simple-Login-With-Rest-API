@@ -10,7 +10,7 @@ Here's the link: https://github.com/deanilvincent/StepsInCreatingBasicASP.NETWeb
 
 In this sample web service project, I included these following model class properties:
 
-``` html
+``` C#
 public class UserDetailCredentials
 {
     public int Id { get; set; }
@@ -38,7 +38,7 @@ When you are done creating your web service, you can now proceed in creating our
 
 ow you have successfull created your project. This includes the following projects summary:
 
-1. Main Project Portable (PCL)
+#1. Main Project Portable (PCL)
 2. Project.Droid (Android)
 3. Project.iOS (iOS)
 4. Project.UWP (UWP)
@@ -48,7 +48,7 @@ ow you have successfull created your project. This includes the following projec
 ### 2.0 Installation of nuget packages
 
 
-2.1 Install the following nuget packages at the main project solution:
+C2.1 Install the following nuget packages at the main project solution:
 
 - Microsoft.Net.Http (https://www.nuget.org/packages/Microsoft.Net.Http/)
 
@@ -81,13 +81,14 @@ Note: The simplest way is to just install the Microsoft.Net.Http since Microsoft
 
 ### 3.0 Creating the Model Class
 
+
 3.1 Right click the Models Folder -> Add -> Class... In this example, we name our class model as "UserDetailCredentials.cs" and click "Add"
 
 ![capture31](https://cloud.githubusercontent.com/assets/10904957/23104891/4885be28-f711-11e6-9764-ebeee99b7199.PNG)
 
 3.2 Add the sample properties for our login details
 
-```html
+```C#
 public class UserDetailCredentials
 {
    public int Id { get; set; }
@@ -97,11 +98,11 @@ public class UserDetailCredentials
 }
 ```
 3.3 Build the solution (Ctrl+Shift+B)
-### 4.0 Adding our code snippet in our web service api controller
+#### 4.0 Adding our code snippet in our web service api controller
 
 4.1 Go to your api web service controller and paste this following code snippet. In this code, we create a new HTTP Get Request with a custom route request of api/UserCredentials/username={username}/password={password}
 
-```html
+```C#
 [HttpGet]
 [Route("api/UserCredentials/username={username}/password={password}")]
 public async Task<IHttpActionResult> UserDetailsLogin(string username, string password)
@@ -123,13 +124,13 @@ public async Task<IHttpActionResult> UserDetailsLogin(string username, string pa
 
 5.2 Inside the RestClient class, include this namespace
 
-``` html
+``` C#
 using System.Net.Http;
 ```
 
 5.3 And paste this code snippet that I created.
 
-``` html
+``` C#
 public class RestClient<T>
 {
    private const string MainWebServiceUrl = "http://MainHost/"; // Put your main host url here
@@ -144,5 +145,23 @@ public class RestClient<T>
 
       return response.IsSuccessStatusCode; // return either true or false
    }
+}
+```
+### 6.0 Creating the Portable service class
+
+6.1 Right click the ServicesHandler Folder -> Add -> Class... In this example, we name our class model as "LoginService.cs" and click "Add"
+
+![capture33](https://cloud.githubusercontent.com/assets/10904957/23105221/3db31176-f716-11e6-999c-0733d2681059.PNG)
+
+6.2 Inside the LoginService paste this following code snippet. 
+
+``` C#
+RestClient<UserDetailCredentials> _restClient = new RestClient<UserDetailCredentials>();
+
+public async Task<bool> CheckLoginIfExists(string username, string password)
+{
+   var check = await _restClient.checkLogin(username, password);
+
+   return check;
 }
 ```
