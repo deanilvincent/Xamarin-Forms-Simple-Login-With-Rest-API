@@ -147,7 +147,7 @@ public class RestClient<T>
    }
 }
 ```
-### 6.0 Creating the Portable service class
+ ### 6.0 Creating the Portable service class
 
 6.1 Right click the ServicesHandler Folder -> Add -> Class... In this example, we name our class model as "LoginService.cs" and click "Add"
 
@@ -187,7 +187,7 @@ public async Task<bool> CheckLoginIfExists(string username, string password)
    <Label Text="Password"
           HorizontalOptions="Center"/>
 
-<Entry Text=""
+   <Entry Text=""
           x:Name="EntryPassword"/>
    <Button Text="Login"
            TextColor="White"
