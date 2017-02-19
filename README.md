@@ -1,4 +1,4 @@
-# Xamarin Forms Simple Login With Rest API
+https://www.nuget.org/packages/Microsoft.Bcl/# Xamarin Forms Simple Login With Rest API
 
 This project is one of the simplest ways how to implement login system using Web Service Rest API.
 
@@ -48,5 +48,7 @@ Now you have successfull created your project. This includes the following proje
 
 2.1 Install the following nuget packages:
 
-- Microsoft.Bcl (
+- Microsoft.Bcl (https://www.nuget.org/packages/Microsoft.Bcl/)
+- Microsoft.Bcl.Build (https://www.nuget.org/packages/Microsoft.Bcl.Build/)
+- Microsoft.Net.Http (https://www.nuget.org/packages/Microsoft.Net.Http/)
 
