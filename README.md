@@ -43,7 +43,6 @@ ow you have successfull created your project. This includes the following projec
 3. Project.iOS (iOS)
 4. Project.UWP (UWP)
 
-
 ![capture27](https://cloud.githubusercontent.com/assets/10904957/23104460/4d423c00-f709-11e6-97dc-4de05a273c21.PNG)
 
 ### 2.0 Installation of nuget packages
@@ -103,7 +102,19 @@ public class UserDetailCredentials
 4.1 Go to your api web service controller and paste this following code snippet. In this code, we create a new HTTP Get Request with a custom route request of api/UserCredentials/username={username}/password={password}
 
 ```html
-
+[HttpGet]
+[Route("api/UserCredentials/username={username}/password={password}")]
+public async Task<IHttpActionResult> UserDetailsLogin(string username, string password)
+{
+   UserDetailCredentials login =
+                await db.UserDetailCredentials.Where(x => x.Username == username && x.Password == password).SingleOrDefaultAsync();
+   if (login == null)
+   {
+      return NotFound();
+   }
+   return Ok(login);
+}
+```
 ### 5.0 Creating the Rest Client class
 
 5.1 Right click the RestAPIClient Folder -> Add -> Class... In this example, we name our class model as "RestClient.cs" and click "Add"
