@@ -43,3 +43,10 @@ Now you have successfull created your project. This includes the following proje
 4. Project.UWP (UWP)
 
 ![capture27](https://cloud.githubusercontent.com/assets/10904957/23104460/4d423c00-f709-11e6-97dc-4de05a273c21.PNG)
+
+### 2.0 Preparing the project environment
+
+2.1 Install the following nuget packages:
+
+- Microsoft.Bcl (
+
