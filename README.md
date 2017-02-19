@@ -25,7 +25,6 @@ When you are done creating your web service, you can now proceed in creating our
 
 ### 1.0 Creating the project
 
-
 1.1 Go to File -> New -> Project (Ctrl+Shift+N)
 
 1.2 Choose Templates -> Visual C# -> Cross Platform and rename the project. (Here I named my project as CrossPlatformBasicLoginSystem) and then Click the "OK"
@@ -36,9 +35,9 @@ When you are done creating your web service, you can now proceed in creating our
 
 ![capture25](https://cloud.githubusercontent.com/assets/10904957/23104393/0c987d00-f708-11e6-85a4-6b668a59bbfa.PNG)
 
-ow you have successfull created your project. This includes the following projects summary:
+Now you have successfully created your project. This includes the following projects summary:
 
-#1. Main Project Portable (PCL)
+1. Main Project Portable (PCL)
 2. Project.Droid (Android)
 3. Project.iOS (iOS)
 4. Project.UWP (UWP)
@@ -48,20 +47,19 @@ ow you have successfull created your project. This includes the following projec
 ### 2.0 Installation of nuget packages
 
 
-C2.1 Install the following nuget packages at the main project solution:
+2.1 Install the following nuget packages at the main project solution:
 
 - Microsoft.Net.Http (https://www.nuget.org/packages/Microsoft.Net.Http/)
-
 
 > Project URL: http://go.microsoft.com/fwlink/?LinkID=280055
     
 - Microsoft.Bcl (https://www.nuget.org/packages/Microsoft.Bcl/)
 
-    > Project URL: http://go.microsoft.com/fwlink/?LinkID=280057
+> Project URL: http://go.microsoft.com/fwlink/?LinkID=280057
     
-5- Microsoft.Bcl.Build (https://www.nuget.org/packages/Microsoft.Bcl.Build/)
+- Microsoft.Bcl.Build (https://www.nuget.org/packages/Microsoft.Bcl.Build/)
 
-    > Project URL: http://go.microsoft.com/fwlink/?LinkID=296436
+> Project URL: http://go.microsoft.com/fwlink/?LinkID=296436
 
 
 You can use either the Manage Packages for Solution or Manually Type in the packages in the Package Manager Console. 
