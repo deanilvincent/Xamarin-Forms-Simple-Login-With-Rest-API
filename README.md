@@ -167,6 +167,7 @@ public async Task<bool> CheckLoginIfExists(string username, string password)
    return check;
 }
 ```
+
 ### 7.0 Creating our Xaml View Page
 
 7.1 Right click the Views Folder -> Add -> New Item... -> Visual C# -> Cross-Platform and choose Forms Xaml Page. In this example, we name our xaml page as "LoginPage.xaml" and click "Add"
@@ -176,6 +177,7 @@ public async Task<bool> CheckLoginIfExists(string username, string password)
 7.2 Modify the xaml page. Here I created a basic sample design of the login.
 
 ```` xaml
+
 <StackLayout Padding="30"
              VerticalOptions="Start">
    <Label Text="Username"
@@ -184,7 +186,8 @@ public async Task<bool> CheckLoginIfExists(string username, string password)
           x:Name="EntryUsername"/>
    <Label Text="Password"
           HorizontalOptions="Center"/>
-   <Entry Text=""
+
+<Entry Text=""
           x:Name="EntryPassword"/>
    <Button Text="Login"
            TextColor="White"
@@ -194,3 +197,52 @@ public async Task<bool> CheckLoginIfExists(string username, string password)
 ```
 
 ![capture35](https://cloud.githubusercontent.com/assets/10904957/23105568/3ef023b6-f71c-11e6-8927-7a4f35c9a814.PNG)
+
+7.3 Adding clicked xaml clicked even handler (Clicked="ButtonLogin_Clicked") in the button login with a name identifier of x:Name="ButtonLogin" 
+
+```` xaml
+<Button Text="Login"
+        TextColor="White"
+        BackgroundColor="#22A7F0"
+        x:Name="ButtonLogin"
+        Clicked="ButtonLogin_Clicked"/>
+```
+Once the Xaml even has been created, automatically our .cs event handler will be created too.
+
+``` xaml
+private void ButtonLogin_Clicked(object sender, EventArgs e)
+{
+    // code goes here
+}
+```
+
+### 8.0 Calling the rest client to validate the login
+
+8.1 Change the even handler to async by adding "async" before the void and "await" inside the event handler.
+
+``` xaml
+private async void ButtonLogin_Clicked(object sender, EventArgs e)
+{
+    // await code goes here
+}
+```
+8.2 Reference the login service to the login page class.
+
+8.3 Add the code snippet inside the login event
+
+``` xaml
+private async void ButtonLogin_Clicked(object sender, EventArgs e)
+{
+   LoginService services = new LoginService();
+   var getLoginDetails = await services.CheckLoginIfExists(XNameUsername.Text, XNamePassword.Text);
+
+   if (getLoginDetails)
+   {
+      await DisplayAlert("Login success", "You are login", "Okay", "Cancel");
+   }
+   else
+   {
+      await DisplayAlert("Login failed", "Username or Password is incorrect or not exists", "Okay", "Cancel");
+   }
+}
+```
