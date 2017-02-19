@@ -19,7 +19,7 @@ public class UserDetailCredentials
     public string Name { get; set; }
 }
 ```
-When you are done creating your web service, we can now proceed in creating our Xamarin Cross Platform Mobile App project.
+When you are done creating your web service, you can now proceed in creating our Xamarin Cross Platform Mobile App project.
 
 # Basic Steps in Implementing Login System using Xamarin Cross Platform.
 
@@ -34,3 +34,12 @@ When you are done creating your web service, we can now proceed in creating our 
 1.3 A white dialog box will appear and you need to choose the following: Template Blank App, Forms in UI Technology and PCL in Sharing. Then click "Accept" to finalize the project creation.
 
 ![capture25](https://cloud.githubusercontent.com/assets/10904957/23104393/0c987d00-f708-11e6-85a4-6b668a59bbfa.PNG)
+
+Now you have successfull created your project. This includes the following projects summary:
+
+1. Main Project Portable (PCL)
+2. Project.Droid (Android)
+3. Project.iOS (iOS)
+4. Project.UWP (UWP)
+
+![capture27](https://cloud.githubusercontent.com/assets/10904957/23104460/4d423c00-f709-11e6-97dc-4de05a273c21.PNG)
