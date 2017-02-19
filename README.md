@@ -184,9 +184,9 @@ public async Task<bool> CheckLoginIfExists(string username, string password)
           x:Name="EntryUsername"/>
    <Label Text="Password"
           HorizontalOptions="Center"/>
-
    <Entry Text=""
-          x:Name="EntryPassword"/>
+          x:Name="EntryPassword"
+          IsPassword="True"/>
    <Button Text="Login"
            TextColor="White"
            BackgroundColor="#22A7F0"
